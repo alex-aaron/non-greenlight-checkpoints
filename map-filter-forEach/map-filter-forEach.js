@@ -50,6 +50,38 @@ const films = [
 
 let filterByTagAndDecade = function(array, tag, decade){
   return array.filter(movie => {
-    
+    if (decade[0] !== '2'){
+      console.log('hit this condition');
+      if (movie.tags.includes(tag) && movie.year[2] === decade[0]){
+        return true;
+      }
+    } else {
+      if (movie.tags.includes(tag) && movie.year.slice(0, movie.year.length - 1) === decade.slice(0, decade.length - 2)){
+        return true;
+      }
+    }
   });
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// PROBLEM #2 //////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+let mapForViews = function(array){
+  return array.map(movie => {
+    return {
+      title: movie.title,
+      views: movie.views
+    }
+  });
+};
+
+////////////////////////////////////////////////////////////////////////////////
+// PROBLEM #3 //////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+let addTag = function(array, tag){
+  array.forEach(movie => {
+    movie.tags.push(tag);
+  });
+};
