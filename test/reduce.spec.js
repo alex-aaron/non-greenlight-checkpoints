@@ -11,7 +11,7 @@ describe("reduce", function(){
             assert.equal(getNumberByTag.toString().includes('.reduce('), true);
         });
     });
-    describe('#getFilmsByDecade', function(){
+    describe('#getMoviesByDecade', function(){
         it('should return an array', function(){
             assert.equal(Array.isArray(getMoviesByDecade(films, '1980s')), true);
         });
